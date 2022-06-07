@@ -1,0 +1,176 @@
+[[!FormIt?
+&hooks=`spam,email,redirect`
+&emailTpl=`seminar_reg`
+&emailSubject=`Регистрация на семинар`
+&emailTo=`seminar.kip@yandex.ru`
+&emailFrom=`info@kipaso.ru`
+&emailFromName=`KIPASO.RU`
+&redirectTo=`288`
+&validate=`company:required,fio:required,prof:required,phone:required,city:required,email:email:required`
+&validationErrorMessage=`Заполните все поля формы!`
+]]
+
+<style>
+    @media screen and (width: 1280px) {
+        .seminar-padding {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    @media screen and (max-width: 1120px) {
+        .seminar-adress {
+            flex-direction: column !important;
+        }
+
+        .seminar-adress-1 {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        .seminar-adress-2 {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        .seminar-adress-date {
+            line-height: 1rem !important;
+        }
+
+        .seminar-form {
+            width: 90% !important;
+            margin: 0 !important;
+        }
+
+    }
+</style>
+
+<h2 style="margin-bottom:17px;text-align:center;">Анкета участника мастер-класса</h2>
+
+<div class="seminar-adress" style="display: none; justify-content: center; font-size: 0.8rem"
+    class="seminar-adress; margin-top: 3%">
+    <div class="seminar-adress-1"
+        style="display: inline-block; padding: 0.5rem; bckground-color: #d4d3d342; box-sizing: border-box; width: 30%">
+        <div class="seminar-adress-date"
+            style="line-height: 1.5rem; line-height: 1rem; text-align: center; display: inline-block">
+            <img src="https://kipaso.ru/assets/images/email/owencloud/calendar-512.png" alt="" width="40" height="40" />
+            <span style="display: block">5 июня</span>
+            <span style="display: block">09:30</span>
+        </div>
+        <div class="seminar-padding"
+            style="display: inline-block; line-height: 1.8rem; line-height: 1.2rem; border-left: 1px solid #222222; padding-left: 2%; box-sizing: border-box; border-left: 1px solid grey; margin-left: 5%; padding-left: 5%;">
+            <a href="https://yandex.ru/maps/-/CBerbCX-0C%0A" style="display: inline-block">г. Волгоград, ул. Михаила
+                Балонина, 7</a>
+            <span style="display: block">Конференц-зал отеля</span>
+            <span style="display: block">Park Inn by Radisson Волгоград</span>
+        </div>
+    </div>
+    <div class="seminar-adress-2"
+        style="display: inline-block; padding: 0.5rem; box-sizing: border-box; bckground-color: #d4d3d342; width: 30%">
+        <div class="seminar-adress-date"
+            style="line-height: 1.5rem;line-height: 1rem; text-align: center; display: inline-block">
+            <img src="https://kipaso.ru/assets/images/email/owencloud/calendar-512.png" alt="" width="40" height="40" />
+            <span style="display: block">7 июня</span>
+            <span style="display: block">09:30</span>
+        </div>
+        <div class="seminar-padding"
+            style="display: inline-block; line-height: 1.8rem; line-height: 1.2rem;border-left: 1px solid #222222; padding-left: 2%; box-sizing: border-box; border-left: 1px solid grey; margin-left: 5%; padding-left: 5%; ">
+            <a href="https://yandex.ru/maps/-/CBqWjLVMHA" style="display: inline-block">г. Саратов, ул. Железнодорожная,
+                72</a>
+            <span style="display: block">Конференц-зал отеля</span>
+            <span style="display: block">«Богемия»</span>
+        </div>
+    </div>
+</div>
+<div class="side_right">
+    <form id="feedbackForm" class="seminar-form" method="post" action="[[~215]]"
+        style="width: 60%; background: #ffffff; margin: 0 auto">
+
+        <div class="feedbox_inset">
+            <span>ФИО:</span> <span style="color:red">[[!+fi.error.fio]]</span>
+            <input style="color: #111" type="text" name="fio" placeholder="Иванов Иван Иванович" size="25"
+                maxlength="50" value="[[!+fi.fio]]" /><br />
+            <span>Наименование компании:</span> <span style="color:red">[[!+fi.error.company]]</span>
+            <input style="color: #111" type="text" name="company" placeholder="ООО Ваша Организация" size="25"
+                maxlength="50" value="[[!+fi.company]]" /><br />
+
+            <span>Вид деятельности:</span> <span style="color:red">[[!+fi.error.prof]]</span>
+            <input style="color: #111" type="text" name="prof" placeholder="Например, инженер КИПиА" size="25"
+                maxlength="50" value="[[!+fi.prof]]" /><br />
+
+            <span>Город:</span> <span style="color:red">[[!+fi.error.prof]]</span>
+            <input style="color: #111" type="text" name="prof" placeholder="город" size="25" maxlength="50"
+                value="[[!+fi.prof]]" /><br />
+            <span>Объекты автоматизации Вашей компании:</span> <span style="color:red">[[!+fi.error.prof]]</span>
+            <input style="color: #111" type="text" name="prof" placeholder="" size="25" maxlength="50"
+                value="[[!+fi.prof]]" /><br />
+            <form>
+                <span>Вы чаще применяете в своих проектах автоматизации …:</span> <span
+                    style="color:red">[[!+fi.error.prof]]</span>
+                <p>
+                    <input style="color: #111" type="checkbox" name="prof" placeholder="" size="25" maxlength="50"
+                        value="[[!+fi.prof]]" />Программируемые логические контроллеры
+                </p><br />
+                <p>
+                    <input style="color: #111" type="checkbox" name="prof" placeholder="" size="25" maxlength="50"
+                        value="[[!+fi.prof]]" />Программируемые реле
+                </p><br />
+                <span>Контроллеры и программируемые реле каких производителей Вы применяли в своих проектах:</span>
+                <span style="color:red">[[!+fi.error.prof]]</span>
+                <input style="color: #111" type="text" name="prof" placeholder="" size="25" maxlength="50"
+                    value="[[!+fi.prof]]" /><br />
+            </form>
+            <form>
+                <span>Есть ли у Вас опыт программирования :</span> <span style="color:red">[[!+fi.error.prof]]</span>
+                <p>
+                    <input style="color: #111" type="checkbox" name="prof" placeholder="" size="25" maxlength="50"
+                        value="[[!+fi.prof]]" />Нет
+                </p><br />
+                <p>
+                    <input style="color: #111" type="checkbox" name="prof" placeholder="" size="25" maxlength="50"
+                        value="[[!+fi.prof]]" />Да, программировал контроллеры
+                </p><br />
+                <p>
+                    <input style="color: #111" type="checkbox" name="prof" placeholder="" size="25" maxlength="50"
+                        value="[[!+fi.prof]]" />Да, работал с программируемыми реле
+                </p><br />
+            </form>
+            <span>Какой мастер-класс Вы бы хотели посетить :</span> <span style="color:red">[[!+fi.error.prof]]</span>
+            <input style="color: #111" type="text" name="prof" placeholder="" size="25" maxlength="50"
+                value="[[!+fi.prof]]" /><br />
+            <span>Какой результат Вы ожидаете от мастер-класса? :</span> <span
+                style="color:red">[[!+fi.error.prof]]</span>
+            <input style="color: #111" type="text" name="prof" placeholder="" size="25" maxlength="50"
+                value="[[!+fi.prof]]" /><br />
+
+
+            <span>Телефон:</span> <span style="color:red">[[!+fi.error.phone]]</span>
+            <input style="color: #111" type="text" name="phone" placeholder="+7 937 1234567" size="25" maxlength="50"
+                value="[[!+fi.phone]]" /><br />
+            <span>Электронная почта:</span> <span style="color:red">[[!+fi.error.email]]</span>
+            <input style="color: #111" type="text" name="email" placeholder="mail@mail.ru" size="25" maxlength="50"
+                value="[[!+fi.email]]" /><br />
+            <div><span style="color:red">[[!+fi.error.city]]</span>
+                <div>
+                    <!--<p><input type="radio"  name="city[]" value="Волгоград" [[!+fi.city:FormItIsChecked=`Volgograd`]] > г. Волгоград</p>
+<p><input type="radio" name="city[]" value="Саратов" [[!+fi.city:FormItIsChecked=`Saratov`]] > г. Саратов</p>-->
+                </div>
+            </div>
+        </div>
+
+        <!--<div><span style="color:red">[[!+fi.error.city]]</span>
+<div>
+<p><input type="radio"  name="city[]" value="Волгоград" [[!+fi.city:FormItIsChecked=`Volgograd`]] > г. Волгоград</p>
+<p><input type="radio" name="city[]" value="Саратов" [[!+fi.city:FormItIsChecked=`Saratov`]] > г. Саратов</p>
+</div>
+</div>-->
+        <input class="seminar-button"
+            style="padding: 16px 20px !important; display: block; box-sizing: border-box;  margin: 0 auto; background-color: #50a453; color: #ffffff; cursor: pointer; font-size: 1rem"
+            name="submit" type="submit" ; return true;" value="Отправить">
+</div>
+</form>
+</div>
