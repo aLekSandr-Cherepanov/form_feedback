@@ -2,7 +2,7 @@
 
     include '/home/client/vendor/autoload.php';
 
-$googleAccountKeyFilePath = "myKey.json"; // Ключ который мы получим после регистрации приложения
+$googleAccountKeyFilePath = "my.json"; // Ключ который мы получим после регистрации приложения
 
 putenv('GOOGLE _APPLICATION CREDENTIALS' . $googleAccountKeyFilePath);
 
